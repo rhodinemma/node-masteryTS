@@ -5,6 +5,7 @@ import compression from 'compression'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
+import router from './router/index'
 
 dotenv.config();
 
@@ -32,3 +33,5 @@ mongoose
     .catch((err) => {
         console.log(err);
     });
+
+app.use('/', router())
